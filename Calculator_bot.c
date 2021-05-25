@@ -73,40 +73,34 @@ void trigonometric() {
     double result;
     printf("Enter trigonometric function\n");
     printf("Sin, Cos, Tan, arcsin, arccos, arctan : ");
-    char trigstring1[MAX_ARRAY_SIZE] = "Sin";
-    char trigstring2[MAX_ARRAY_SIZE] = "Cos";
-    char trigstring3[MAX_ARRAY_SIZE] = "Tan";
-    char trigstring4[MAX_ARRAY_SIZE] = "Arcsin"; 
-    char trigstring5[MAX_ARRAY_SIZE] = "Arccos";
-    char trigstring6[MAX_ARRAY_SIZE] = "Arctan";
     scanf("%s", &trigstring);
     printf("Enter angle in degrees: ");
     scanf("%lf", &angle);
     radians = 0.0174532925*angle;
-    if(strcmp(trigstring, trigstring1) || strcmp(trigstring, "sin") == 0){
+    if(strcmp(trigstring, "Sin") == 0 || strcmp(trigstring, "sin") == 0){
         result = sin(radians);
         printf("%lf", result);
     }
-    else if(strcmp(trigstring, trigstring2) == 0 || strcmp(trigstring, "cos")){
+    else if(strcmp(trigstring, "Cos") == 0 || strcmp(trigstring, "cos") == 0){
         result = cos(radians);
         printf("%lf", result);
 
     }
-    else if(strcmp(trigstring, trigstring3) == 0 || strcmp(trigstring, "tan")){
+    else if(strcmp(trigstring, "Tan") == 0 || strcmp(trigstring, "tan") == 0){
         result = tan(radians);
         printf("%lf", result);
     }
-    else if(strcmp(trigstring, trigstring4) == 0 || strcmp(trigstring, "arctan")){
+    else if(strcmp(trigstring, "Arcsin") == 0 || strcmp(trigstring, "arcsin") == 0){
         result = asin(radians);
         printf("%lf", result);
         
     }
-    else if(strcmp(trigstring, trigstring5) == 0 || strcmp(trigstring, "arcsin")){
+    else if(strcmp(trigstring, "Arccos") == 0 || strcmp(trigstring, "Arccos") == 0){
         result = acos(radians);
         printf("%lf", result);
 
     }
-    else if(strcmp(trigstring, trigstring6) == 0 || strcmp(trigstring, "arccos")){
+    else if(strcmp(trigstring, "Arctan") == 0 || strcmp(trigstring, "arctan") == 0){
         result = atan(radians);
         printf("%lf", result);
     }
