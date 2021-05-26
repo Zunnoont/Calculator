@@ -66,6 +66,25 @@ void powers(double int1, double int2) {
     }
 
 }
+void root(){
+    double degree;
+    double root;
+    double base;
+    double result;
+    printf("Enter degree of root (Entering 2 is equivelant to a square root): ");
+    scanf("%lf", &degree);
+    root = 1/degree;
+    printf("Enter number inside root: ");
+    scanf("%lf", &base);
+    if(base >= 0){
+        result = pow(base, root);
+        printf("%lf", result);
+    }
+    else{
+        printf("Number inside root must be positive or zero");
+    }
+    
+}
 void trigonometric() {
     char trigstring[MAX_ARRAY_SIZE];
     double angle;
@@ -74,7 +93,7 @@ void trigonometric() {
     printf("Enter trigonometric function\n");
     printf("Sin, Cos, Tan, arcsin, arccos, arctan : ");
     scanf("%s", &trigstring);
-    printf("Enter angle in degrees: ");
+    printf("Enter angle in degrees (trigonometric) or range inbetween -1 to 1 (inverse trigonometric): ");
     scanf("%lf", &angle);
     radians = 0.0174532925*angle;
     if(strcmp(trigstring, "Sin") == 0 || strcmp(trigstring, "sin") == 0){
@@ -118,6 +137,7 @@ int main(void) {
     printf("Enter 1 for basic mathematical operations: \n");
     printf("Enter 2 for powers\n");
     printf("Enter 3 for trigonometric functions\n");
+    printf("Enter 4 for roots\n");
     scanf("%d", &options);
     if(options == 1){
         basic_operations(int1, int2);
@@ -127,6 +147,10 @@ int main(void) {
     }
     else if(options == 3){
         trigonometric();
+    }
+    else if(options == 4){
+        root();
+        
     }
     else{
         printf("Invalid operation choice");
