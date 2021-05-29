@@ -93,7 +93,7 @@ void trigonometric() {
     printf("Enter trigonometric function\n");
     printf("Sin, Cos, Tan, arcsin, arccos, arctan : ");
     scanf("%s", &trigstring);
-    printf("Enter angle in degrees (trigonometric) or range inbetween -1 to 1 (inverse trigonometric): ");
+    printf("Enter angle: ");
     scanf("%lf", &angle);
     radians = 0.0174532925*angle;
     if(strcmp(trigstring, "Sin") == 0 || strcmp(trigstring, "sin") == 0){
@@ -109,21 +109,44 @@ void trigonometric() {
         result = tan(radians);
         printf("%lf", result);
     }
-    else if(strcmp(trigstring, "Arcsin") == 0 || strcmp(trigstring, "arcsin") == 0){
-        result = asin(radians);
-        printf("%lf", result);
+    
+
+
+}
+void inverse_trig(){
+    char inverse_trig[MAX_ARRAY_SIZE];
+    double value;
+    double result;
+    double angle;
+    printf("Enter inverse trigonometric function\n");
+    printf("Arcsin, Arccos, Arctan: ");
+    scanf("%s", &inverse_trig);
+    printf("Enter value inside inverse function from between -1 and 1, e.g: entering 1 is arcsin(1): ");
+    scanf("%lf", &value);
+    if(value < -1 || value > 1){
+        while(value < -1 || value > 1){
+            printf("Invalid value, enter value from -1 to 1: ");
+            scanf("%lf", &value);
+
+        }
+    }
+    if(strcmp(inverse_trig, "Arcsin") == 0 || strcmp(inverse_trig, "arcsin") == 0){
+        result = asin(value);
+        angle = 180/M_PI * result;
+        printf("%lf", angle);
         
     }
-    else if(strcmp(trigstring, "Arccos") == 0 || strcmp(trigstring, "Arccos") == 0){
-        result = acos(radians);
-        printf("%lf", result);
+    else if(strcmp(inverse_trig, "Arccos") == 0 || strcmp(inverse_trig, "Arccos") == 0){
+        result = acos(value);
+        angle = 180/M_PI * result;
+        printf("%lf", angle);
 
     }
-    else if(strcmp(trigstring, "Arctan") == 0 || strcmp(trigstring, "arctan") == 0){
-        result = atan(radians);
-        printf("%lf", result);
+    else if(strcmp(inverse_trig, "Arctan") == 0 || strcmp(inverse_trig, "arctan") == 0){
+        result = atan(value);
+        angle = 180/M_PI * result;
+        printf("%lf", angle);
     }
-
 
 }
 int main(void) {
@@ -137,7 +160,8 @@ int main(void) {
     printf("Enter 1 for basic mathematical operations: \n");
     printf("Enter 2 for powers\n");
     printf("Enter 3 for trigonometric functions\n");
-    printf("Enter 4 for roots\n");
+    printf("Enter 4 for inverse trigonometric functions\n");
+    printf("Enter 5 for roots\n");
     scanf("%d", &options);
     if(options == 1){
         basic_operations(int1, int2);
@@ -149,8 +173,11 @@ int main(void) {
         trigonometric();
     }
     else if(options == 4){
-        root();
+        inverse_trig();
         
+    }
+    else if(options == 5){
+        root();
     }
     else{
         printf("Invalid operation choice");
