@@ -136,7 +136,7 @@ void inverse_trig(){
         printf("%lf", angle);
         
     }
-    else if(strcmp(inverse_trig, "Arccos") == 0 || strcmp(inverse_trig, "Arccos") == 0){
+    else if(strcmp(inverse_trig, "Arccos") == 0 || strcmp(inverse_trig, "arccos") == 0){
         result = acos(value);
         angle = 180/M_PI * result;
         printf("%lf", angle);
