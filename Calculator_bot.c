@@ -149,6 +149,29 @@ void inverse_trig(){
     }
 
 }
+void factorials(){
+    int number;
+    int increment;
+    int factorial = 1;
+    printf("Enter factorial: ");
+    scanf("%d", &number);
+    if(number < 0){
+        number = number * -1;
+        for(increment = 1; increment <= number; increment++){
+            factorial = factorial * increment;
+        }
+        factorial = factorial * -1;
+        printf("%d", factorial);
+    }
+    else{
+        for(increment = 1; increment <= number; increment++){
+            factorial = factorial * increment;
+        } 
+        printf("%d", factorial);
+    }
+    
+   
+}
 int main(void) {
 
     char operator;
@@ -162,6 +185,7 @@ int main(void) {
     printf("Enter 3 for trigonometric functions\n");
     printf("Enter 4 for inverse trigonometric functions\n");
     printf("Enter 5 for roots\n");
+    printf("Enter 6 for factorials\n");
     scanf("%d", &options);
     if(options == 1){
         basic_operations(int1, int2);
@@ -178,6 +202,9 @@ int main(void) {
     }
     else if(options == 5){
         root();
+    }
+    else if(options == 6){
+        factorials();
     }
     else{
         printf("Invalid operation choice");
