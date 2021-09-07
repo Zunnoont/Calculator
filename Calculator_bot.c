@@ -108,39 +108,24 @@ void trigonometric() {
         result = tan(radians);
         printf("%lf", result);
     }
-}
-void inverse_trig() {
-    char inverse_trig[MAX_ARRAY_SIZE];
-    double value;
-    double result;
-    double angle;
-    printf("Enter inverse trigonometric function\n");
-    printf("Arcsin, Arccos, Arctan: ");
-    scanf("%s", inverse_trig);
-    printf("Enter value inside inverse function from between -1 and 1, e.g: entering 1 is arcsin(1): ");
-    scanf("%lf", &value);
-    if(value < -1 || value > 1) {
-        while(value < -1 || value > 1) {
-            printf("Invalid value, enter value from -1 to 1: ");
-            scanf("%lf", &value);
-        }
-    }
-    if(strcmp(inverse_trig, "Arcsin") == 0 || strcmp(inverse_trig, "arcsin") == 0) {
-        result = asin(value);
+    else if(strcmp(trigstring, "Arcsin") == 0 || strcmp(trigstring, "arcsin") == 0) {
+        result = asin(angle);
         angle = 180/M_PI * result;
         printf("%lf", angle);
     }
-    else if(strcmp(inverse_trig, "Arccos") == 0 || strcmp(inverse_trig, "arccos") == 0) {
-        result = acos(value);
+    else if(strcmp(trigstring, "Arccos") == 0 || strcmp(trigstring, "arccos") == 0) {
+        result = acos(angle);
         angle = 180/M_PI * result;
         printf("%lf", angle);
+        
     }
-    else if(strcmp(inverse_trig, "Arctan") == 0 || strcmp(inverse_trig, "arctan") == 0) {
-        result = atan(value);
+    else if(strcmp(trigstring, "Arctan") == 0 || strcmp(trigstring, "arctan") == 0) {
+        result = atan(angle);
         angle = 180/M_PI * result;
         printf("%lf", angle);
     }
 }
+
 void factorials() {
     int number;
     int increment;
@@ -168,13 +153,21 @@ void corefunction(void){
     double int2;
     int options;
     double angle;
-    printf("--WeLcOme To CaLcUlAtOr BoT--\n");
+    printf("\e[1;32m--WeLcOme To CaLcUlAtOr BoT--\n\e[0m");
+    printf("\n");
     printf("Enter 1 for basic mathematical operations: \n");
+    printf("\n");
     printf("Enter 2 for powers\n");
+    printf("\n");
     printf("Enter 3 for trigonometric functions\n");
+    printf("\n");
     printf("Enter 4 for inverse trigonometric functions\n");
+    printf("\n");
     printf("Enter 5 for roots\n");
+    printf("\n");
     printf("Enter 6 for factorials\n");
+    printf("\n");
+    printf("Input: ");
     scanf("%d", &options);
     if(options == 1) {
         basic_operations(int1, int2);
