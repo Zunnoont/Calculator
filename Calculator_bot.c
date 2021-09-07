@@ -10,7 +10,7 @@
 #include <math.h>
 #include <string.h>
 
-#define MAX_ARRAY_SIZE 1000
+#define MAX_ARRAY_SIZE 100
 
 void basic_operations(double int1, double int2) {
     char operator;
@@ -44,7 +44,7 @@ void powers(double int1, double int2) {
     char string2[MAX_ARRAY_SIZE] = "e";
     char string3[MAX_ARRAY_SIZE] = "Pi";
     printf("Enter base: Integer, e, Pi:\n");
-    scanf("%s", &string);
+    scanf("%s", string);
     if(strcmp(string, string1) == 0) {
         printf("Enter Numbers. E.g: entering 2 3 is 2^3: ");
         scanf("%lf %lf", &int1, &int2);
@@ -92,7 +92,7 @@ void trigonometric() {
     double result;
     printf("Enter trigonometric function\n");
     printf("Sin, Cos, Tan, arcsin, arccos, arctan : ");
-    scanf("%s", &trigstring);
+    scanf("%s", trigstring);
     printf("Enter angle: ");
     scanf("%lf", &angle);
     radians = 0.0174532925 * angle;
@@ -116,7 +116,7 @@ void inverse_trig() {
     double angle;
     printf("Enter inverse trigonometric function\n");
     printf("Arcsin, Arccos, Arctan: ");
-    scanf("%s", &inverse_trig);
+    scanf("%s", inverse_trig);
     printf("Enter value inside inverse function from between -1 and 1, e.g: entering 1 is arcsin(1): ");
     scanf("%lf", &value);
     if(value < -1 || value > 1) {
