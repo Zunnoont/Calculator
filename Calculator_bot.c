@@ -9,8 +9,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include "calculator_bot.h"
 
-#define MAX_ARRAY_SIZE 100
+
 
 void basic_operations(double int1, double int2) {
     char operator;
@@ -125,7 +126,6 @@ void trigonometric() {
         printf("%lf", angle);
     }
 }
-
 void factorials() {
     int number;
     int increment;
@@ -147,7 +147,7 @@ void factorials() {
         printf("%d", factorial);
     }
 }
-void corefunction(void){
+void corefunction(void) {
     char operator;
     double int1;
     double int2;
@@ -160,8 +160,6 @@ void corefunction(void){
     printf("Enter 2 for powers\n");
     printf("\n");
     printf("Enter 3 for trigonometric functions\n");
-    printf("\n");
-    printf("Enter 4 for inverse trigonometric functions\n");
     printf("\n");
     printf("Enter 5 for roots\n");
     printf("\n");
@@ -177,9 +175,6 @@ void corefunction(void){
     }
     else if(options == 3) {
         trigonometric();
-    }
-    else if(options == 4) {
-        inverse_trig();
     }
     else if(options == 5) {
         root();
