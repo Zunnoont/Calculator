@@ -147,6 +147,17 @@ void factorials() {
         printf("%d", factorial);
     }
 }
+int fibonacci(int sequence) {
+    if(sequence == 0) {
+        return 0;
+    }
+    else if(sequence == 1) {
+        return 1;
+    }
+    else {
+        return fibonacci(sequence-1) + fibonacci(sequence-2);
+    }
+}
 void corefunction(void) {
     char operator;
     double int1;
@@ -165,10 +176,12 @@ void corefunction(void) {
     printf("\n");
     printf("Enter 6 for factorials\n");
     printf("\n");
+    printf("Enter 7 for fibonacci sequences:\n");
     printf("Input: ");
     scanf("%d", &options);
     if(options == 1) {
         basic_operations(int1, int2);
+        
     }
     else if(options == 2) {
         powers(int1, int2);
@@ -181,6 +194,12 @@ void corefunction(void) {
     }
     else if(options == 6) {
         factorials();
+    }
+    else if(options == 7) {
+        int fibsequence;
+        printf("Enter fibonacci sequence to be calculated: ");
+        scanf("%d", &fibsequence);
+        printf("%d\n", fibonacci(fibsequence));
     }
     else{
         printf("Invalid operation choice");
